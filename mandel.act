@@ -1,0 +1,36 @@
+proc main()          
+  byte wid=4
+  card xcoord
+  card ycoord 
+  card xcenter
+  card ycenter    
+  card magsqr,xnew,ynew,x,y,ca,cb,t
+  graphics(5   ) ; 160x192 ->80X40  
+  xcenter=-1  
+  ycenter=0  
+  color=1
+  for xcoord= 0 to 79  do
+    for ycoord=0 to 39 do
+      ca =(xcoord-40)/79 *wid+xcenter
+      cb =(ycoord-20)/79 *2*wid+ycenter
+      x=0
+      y=0
+      for t=1 to 50 do
+        xnew = (x*x) - (y*y)+ ca
+        ynew = (2 * x * y) + cb
+        x = xnew
+        y = ynew
+        magsqr = (x*x)+(y*y)
+        PRINTCE(MAGSQR)
+        if magsqr > 100 then
+          PRINTE("WOOT")
+          t=999
+          exit
+        fi
+      od
+     if t > 100 then
+       plot(xcoord,ycoord)
+     fi
+    od
+  od
+return     
