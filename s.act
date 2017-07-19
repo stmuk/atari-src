@@ -1,0 +1,49 @@
+int j=[0],i=[0]
+int array numbers(49),primes(5)
+int limit=[48],plimit=[4]
+
+proc main() 
+
+    while i<limit  
+        do 
+         numbers(i) = i + 2
+         i==+1
+        od
+
+    i=0
+    while i<limit
+      do
+        if numbers(i) <> -1 then
+
+          j = (2 * numbers(i))-2
+          while j < limit
+           do
+             numbers(j) = -1
+             j ==+ numbers(i)
+           od
+   
+        fi
+        i==+1
+      od
+
+    j=0
+    i=0
+    while ((i < limit) and (j < plimit))
+     do
+       if numbers(i) <> -1 then
+         primes(j) = numbers(i)
+         j ==+1
+       fi
+
+       i==+1
+     od
+
+
+    i=0
+    while i <plimit 
+        do 
+         printce(primes(i))
+         i==+1
+        od
+
+return     
